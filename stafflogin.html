@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        body{
+        background-image: url("https://www.suman.co.in/local/images/media/4_1533897867.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+        font-size: medium;
+        color:black;
+        }
+        label{
+            border-radius: 30%;
+        }
+        .container{
+            background-color:wheat;
+            border-radius: 25px;
+            width: 500px;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            color:black;
+           }
+        button{
+            width: 100px;
+            height:50px;
+            background-color:purple;
+            border-radius:50px;
+            color:wheat;
+        }
+        input[type=text]{
+            border-radius: 50px;
+            border-width:200px;
+        }
+
+        
+  </style>
+
+<body>
+    
+
+    
+        {% for msg in messages %}
+        {{msg}}
+        {% endfor %}
+        <form action="" method="POST" >
+            {% csrf_token %}
+
+        <h1 style="text-align:center;"><b>Staff Log In</b></p></h1>
+        <br>
+        <div class="container">
+<br>
+            <p style=text-align:center; ><label for="Uname"><b>Staff ID</b></label>
+            <input type="text" name="Staff Id" placeholder="Enter your ID"></p>
+<br>
+       <p style=text-align:center; ><label for="Uname"><b>Staff name</b></label>
+       <input type="text" name="Staff name" placeholder="Enter your name"></p>
+<br>
+           <p style=text-align:center;><label for="psw"><b>password</b></label>
+            <input type="password" name="password" placeholder="Enter your password"></p>
+<br>
+
+         <p style=text-align:center;><button type="submit"><b>LOGIN</b></button></p>
+<br>
+         <p style=text-align:center;><b>Forgot password:</b><a href="password_reset" >Click Here</a></p>
+   
+         <p style=text-align:center;><b>"Don't have an account?":</b><a href="staffregister" >Signup</a></p>
+         <br>
+         <br>
+
+        </div>
+   </form>
+   
+</body>
+</html>

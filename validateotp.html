@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title> OTP </title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<style>
+    body{
+        background-image: url("https://assets.entrepreneur.com/content/3x2/2000/20151026095205-shutterstock-249068599.jpeg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-clip: border-box;
+        background-attachment: fixed;
+    }
+    button{
+        width: 100px;
+        height:50px;
+        background-color:purple;
+        border-radius:50px;
+        color: white;
+    }
+    h1{
+        color:white;
+        text-align: center;
+    }
+    p{
+        color:black;
+    }
+    .container{
+        background-color: aquamarine;
+        border-radius: 25px;
+        width: 500px;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+
+    
+</style>
+<body>
+    <br>
+    <h1>OTP Verification</h1>
+    
+
+ <div class="container">
+      <form action="../studentvalidate" method="POST" >
+        {% csrf_token %}
+        <br>
+        <br>
+        <p style="text-align: center;",><label>Enter OTP</label>
+        <input id="ipotp"type="text" name="otp" /></p>
+        <p style="text-align: center;",><input type="hidden" id="otpid" name="genotp"value={{otp}} ></p>
+            <p style="text-align: center;",><button type="submit"><b>Register</b></button></p>
+            <br>
+            <br>
+      </form>
+
+ </div>
+
+</body>
+</html>
+<!--
+<script>
+function validateotp(){
+    if(document.getElementById("ipotp").value == document.getElementById("otpid").value){
+        $.ajax({
+            type:'GET',
+            dataType:'json',
+            url:'/studentvalidate',
+            data:{csrfmiddlewaretoken:'{{csrf_token}}'},
+            success:function callback(response){
+            }
+            })
+    }
+    else{
+        alert("wrong otp")
+    }
+}
+</script>
+-->

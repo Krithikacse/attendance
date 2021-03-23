@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+      body{
+      background-image: url("https://pactrack.sarjen.com/wp-content/uploads/2017/03/Employee-Management.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100%;
+      }
+      button{
+            width: 100px;
+            height:50px;
+            background-color:purple;
+            border-radius:50px;
+            color: white;
+        }
+      .container{
+            background-color:wheat;
+            border-radius: 25px;
+            width: 500px;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+      }
+
+
+
+        
+</style>
+<body>
+     
+      <h1 style="text-align:center">Student Signup</h1></p>
+        <div class="Container">
+        <form action="" method="POST">
+            {% csrf_token %}
+       <div class="container">
+             <br>
+            <p style=text-align:center;><label for="UserName"><b>UserName</b></label>
+            <input type="text" name="UserName" placeholder="Enter your Name"></p>
+            
+            <p style=text-align:center;><label for="User id"><b>User id</b></label><input type="User id" name="User id" placeholder="Enter your ID"></p>
+            
+
+            <p style=text-align:center;><label for ="E-Mail"><b>E-mail ID</b></label><input type="E-mail" name="MailId" placeholder="abc@gmail.com"></p></p>
+      
+        
+      <p style=text-align:center;><label for="Date of Birth"><b>DOB</b></label>
+            <input type="Date of Birth" name="Date of Birth"></p>
+
+            
+
+            <p style=text-align:center;><label ><b>Department</b></label><select id="Department" name="Department" ></p>
+
+          <p style=text-align:center;> <option value="CSE">CSE</option>
+            <option><Option value="ECE">ECE</option>
+            <option><Option value="EEE">EEE</option>
+            <Option><option value="Mech">Mechanical</Option>
+            <option><Option value="BioMedical">BioMedical</option>
+            <option><Option value="Civil">Civil</option>
+            </select></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+           <p style=text-align:center;><label for="Staffs"><b>Staff</b>
+            <select id="Staffs" name="Staffname" >
+                  {% for staff in staffs %}
+            <option value={{staff.staffname}}>{{staff.staffname}}{{staff.Department}}</option>
+                  {% endfor %}
+</select></p>
+     
+
+           <p style=text-align:center;><label for ="Phone number"><b>Phone number</b></label><input type="number" name="Phone number" placeholder="Enter your phone number"></p>
+            
+     
+            <p style=text-align:center;><label for="password" ><b>Password</b></label>
+            <input type="password" name="password" placeholder="Enter your password"></p>
+      
+
+           <p style=text-align:center;><label for="password" ><b>Confirm-Password</b></label><input type="password" name="password" placeholder="Enter your confirm-password"></p></p>
+         
+            <p style="text-align:center;"><label for="Parent's Name"><b>Parent Name</b></label>
+            <input type="text" name="Parent Name"></p>
+            <p style="text-align:center;"><label for="Parent's email"><b>Parent email</b></label>
+            <input type="text" name="Parent email"></p>
+           
+
+         <p style=text-align:center;><button type="submit" ><p>send otp</p></button><a href="localhost.studentdetails"></a></p>
+         <br>
+            </form>
+            </div>
+</body>
+</html>
+
+<!----
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+      $('#Department').change(function(){
+     department = $(this).val();
+      request_url = '/get_staffs';
+        $.ajax({
+            url: request_url,
+            method:'get',
+            dataType:'json',
+            data:{'department':department,csrfmiddlewaretoken:'{{csrf_token}}'},
+            success: function(res){
+            $.each(res, function(r){
+                $('#Department').append(
+                $('<option></option>').val(r).html(r)
+                )
+              });
+            }
+      })
+});
+
+</script>
+

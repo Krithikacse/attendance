@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Details</title>
+</head>
+<body>
+    <div class="Container">
+        
+        <form action="" method="POST" >
+            {% csrf_token %}
+            <h1 style="text-align:center;">Admin Register</h1>
+            <p style=text-align:center;><label for="Institute Name"> <b>Institute name</b> </label>
+            <input type="text" name="Institute Name" placeholder="Enter your institute Name"></p>
+            <p style=text-align:center;><label for="InstituteId"><b>Register ID</b></label>
+            <input type="Institute Id" name="Institute Id" placeholder="Enter your ID"></p>
+           <p style=text-align:center;> <label for ="E-Mail"><b>E-mail ID</b></label>
+            <input type="E-mail" name="MailId" placeholder="abc@gmail.com"></p></div>
+        <p style=text-align:center;><form action="upload.php" method="POST" enctype="multipart/form-data"><b>Select image to upload:</b><input type="file" name="fileToUpload" id="fileToUpload">
+            </p>          
+            <p style=text-align:center;><label for="password" ><b>Password</b></label>
+            <input type="password" name="password" placeholder="Enter your password"></p>
+            <p style=text-align:center;><label for="password" ><b>Confirm-Password</b></label>
+            <input type="password" name="password" placeholder="Enter your confirm-password"></form>
+            <p style=text-align:center;><label for ="Phone Number"><b>Phone Number</b></label>
+            <input type="Phone Number" name="Phone Number" placeholder="Enter your number"></p>
+            
+            <p style=text-align:center;><button type="submit" >Submit</button><a href="Adminlogin.html"></a>
+            
+            
+        </form>
+
+
+    
+    
+</body>
+</html>

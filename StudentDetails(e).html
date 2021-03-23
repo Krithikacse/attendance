@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+    background-image: url("https://pactrack.sarjen.com/wp-content/uploads/2017/03/Employee-Management.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    font-size: medium;
+    color:black;
+    }
+    button{
+      width: 100px;
+      height:50px;
+      background-color:purple;
+      border-radius:50px;
+      color: white;
+    }
+    .container{
+        background-color:wheat;
+        border-radius: 25px;
+        width: 500px;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      b{
+        text-align: center;
+      }
+      .container input{
+        text-align: center;
+      }
+      img{
+        border-image-source: none;
+      }
+</style>
+
+<body>
+    <h1 style="text-align:center;">Student Details</h1>
+    
+    <div class="container">
+      <br>
+    {% for u in user %}
+    </form>
+    <p style="text-align:center;"><label for="Student Name"></label><b>Student Name:</b>{{u.name}}</p>
+     
+
+    <p style="text-align:center;"><label for="Register number"></label><b>Register number:</b>{{u.registernumber}}</p>
+            
+    <p style="text-align:center;"><label for="Date Of Birth"></label><b>DOB:</b>{{u.dob}}</p>
+    
+    <p style="text-align:center;"><label for="Date Of Birth"></label><b>Staffname:</b>{{u.Staffname}}</p>
+                
+     <p style="text-align:center;"><b>Total Days=</b>{{ats}}</p>
+     <p style="text-align:center;"><b>Present Days=</b>{{pre}}</p>
+     <p style="text-align:center;"><b>Absent Days=</b>{{abs}} </p>  
+     
+     
+     <p style="text-align:center;"><button><b>OK</b></button></p>
+
+     <p style="text-align: center;">Log-out Here:
+        <a href="../" class="btn btn-info btn-lg"> Log out
+        </a>
+        <br>
+        <br>
+        <br>
+
+      </p>  
+    {%endfor%} 
+    </div>
+</body>
+</html>

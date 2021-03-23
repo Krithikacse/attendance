@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  body{
+    background-image: url("https://pactrack.sarjen.com/wp-content/uploads/2017/03/Employee-Management.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    font-size: medium;
+    color:black;
+    }
+    button{
+        width: 100px;
+        height:50px;
+        background-color:powderblue;
+        border-radius:50px;
+        color: red;
+    }
+    
+    .container{
+      background-color:wheat;
+      border-radius: 25px;
+      width: 500px;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+
+    }
+    h1{
+      text-align: center;
+    }
+    p{
+      text-align: center;
+    }
+    a{
+      color:blueviolet;
+    }
+</style>
+<body>
+  <br>
+  <h1 style text-align="center;",>Mail</h1>
+  <br>
+
+  <div class="container">
+    <br>
+<p text-align="center";,><b>From:</b>{{staffname}}</p>
+ <p text-align="center"></p><b>Send Mails to:</b></p><a href="../mail?staffname:{{staffname}}"></a> 
+<form action="../mail" method="post">
+  {% csrf_token %}
+  <input type="hidden" value={{staffname}} name="namestaff">
+<button type="submit"><b>Send mails</b></button>
+</form>
+
+ <p style="text-align:center;",><button type="submit">
+  <a href="../"> <b>Log out</b></a></button>
+  <br>
+  <br>
+
+</p>  
+ 
+ 
+</body>
+</html>

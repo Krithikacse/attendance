@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        body{
+            background-image: url("https://pactrack.sarjen.com/wp-content/uploads/2017/03/Employee-Management.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
+            font-size: medium;
+            color:black;
+            }
+        
+           
+
+        
+        
+    
+</style>
+<body>
+    <div class="Container">
+        <form action="" method="POST" >
+            {% csrf_token %}
+        <h1> <p style="text-align:center;">Admin Log In</p></h1>
+            <p style=text-align:center;><label for="Uname"><b>User ID</b></label>
+            <input type="number" name="User id" placeholder="Enter your ID"></p>
+<br>
+           <p style=text-align:center;> <label for="psw"><b>password</b></label>
+            <input type="psw" name="password" placeholder="Enter your password"></p>
+<br>
+
+<p style=text-align:center;><button type="submit">LOGIN</button></p>
+<br>
+<p style=text-align:center;><label for="Forgot Password":><b>"Forgot password": </b></label> 
+    <a href="password_reset" ><b>Click here</b></a>.</p>
+   
+<p style=text-align:center;><label for="Don't have an account":><b>"Don't have an account":</b> </label> <a href="adminregister" ><b>Signup</b></a></p>
+
+   </form>
+   </div>
+</body>
+</html>

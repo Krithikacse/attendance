@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        body{
+        background-image: url("https://pactrack.sarjen.com/wp-content/uploads/2017/03/Employee-Management.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+        font-size: medium;
+        color:black;
+    
+        }
+        table{
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+            align-items: center;
+        }
+        td,th{
+            border: 2px solid #141313;
+            text-align: center;
+            color: black;
+    
+        }
+        .center{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .container{
+            background-color: beige;
+            border-radius: 25px;
+            width: 700px;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        button{
+            width: 100px;
+            height:50px;
+            background-color:purple;
+            border-radius:50px;
+            color: white;
+            }
+        div{
+            text-align: center;
+        }
+        
+  </style>
+
+<body>
+    <h1 style="text-align:center;",>Staff Details</h1>
+
+    <div class="container">
+
+
+
+{% for u in user %}
+<br>    <p style="text-align:center;",><label for="Staff Name"><b>Staff Name:</b>{{u.staffname}}</label></p>
+        
+    
+        <p style="text-align:center;",><label for="Staff Id"><b>Staff Id:</b>{{u.staffid}}</label></p>
+
+    
+        <p style="text-align:center;",><label for="Mail Id"><b>Mail Id:</b>{{u.Mail}}</label></p>
+            
+    
+        <p style="text-align:center;",><label for="department"><b>Department:</b>{{u.Department}}</label></p>
+                    
+    
+        <p style="text-align:center;",><label for="Present Students"><b>Present Students</b></label>
+        <input type="Present Students" name="Present Students"></p>
+        
+        <p style="text-align:center;",><label for="Absent Students"><b>Absent Students</b></label>
+        <input type="Absent Students" name="Absent Students"></p>
+
+        <p style="text-align:center;",><label for="Total Students"><b>Total Students</b></label>
+        <input type="Total Students" name="Total Students"></p>
+         <p><form action="../attendancesubmit" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="staff" value={{u.staffname}}>
+                        <table class="center">
+                            <th>roll number</th>  <th>Student name</th>  <th>present/absent</th> 
+                        {% for stud in studs %}
+                         <tr><td>{{stud.registernumber}}</td><br><td>{{stud.name}}</td><br><td><input type="checkbox" name="{{stud.registernumber}}"></td></tr>
+                         {% endfor %}  
+                        </table>
+                        <p style="text-align:center;",><button type="submit"><b>submit</b></button></p>
+
+                        <p style="text-align:center;",><button onclick="window.print()"><b>Print</b></button></p>
+                        <br>
+                        <br>
+                {% endfor %}
+        </form>    
+    </div>                  
+</body>
+</html>

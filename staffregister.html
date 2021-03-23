@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Details</title>
+</head>
+<style>
+    
+        body{
+        background-image: url("https://pactrack.sarjen.com/wp-content/uploads/2017/03/Employee-Management.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+        font-size: medium;
+        color:black;
+        }
+        .container{
+            background-color:wheat;
+            border-radius: 25px;
+            width: 500px;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        button{
+            width: 100px;
+            height:50px;
+            background-color:purple;
+            border-radius:50px;
+            color: white;
+        }
+        input{
+            box-sizing: border-box;
+            
+        }
+        select{
+            display: flexbox;
+
+        }
+        
+  </style>
+
+<body>
+              
+        <form action="" method="POST" enctype="multipart/form-data">
+            <h1 style="text-align:center;">Staff Signup</h1>
+            <br>
+            <br>
+           <div class="container">  
+               {% csrf_token %}
+               <br>
+            <p style=text-align:center;><label for="Staff Name"> <b>Staff Name</b></label>
+            <input type="text" name="Staff Name" placeholder="Enter your Name"></p>
+            
+            <p style=text-align:center;><label for="Staff ID"><b>Staff ID</b></label>
+            <input type="number" name="staff Id" placeholder="Enter your ID"></p>
+            
+            <p style=text-align:center;><label for ="E-Mail"><b>E-mail ID</b></label>
+            <input type="E-mail" name="MailId" placeholder="abc@gmail.com"></p>
+            
+            <p style=text-align:center;><label for ="Phone Number"><b>Phone Number</b></label>
+            <input type="Phone Number" name="Phone Number" placeholder="Enter your Number"></p>
+
+            <p style=text-align:center;> <label for="Gender" ><b>Gender</b></label>
+            <select id="Gender" name="Genderclass" >
+            <option value="Male">Male</option>
+            <Option value="Female">Female</option>
+            </select>
+            </p>
+            
+        
+            <p style=text-align:center;><label for="Department"><b>Department</b></label>
+            <select id="Department"  name="Departments" >
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <Option value="EEE">EEE</option>
+            <option value="Mech">Mechanical</Option>
+            <Option value="BME">BME</option>
+            <Option value="Civil">Civil</option>
+            </select></p>
+            
+            
+            <p style=text-align:center;><label for="password" ><b>Password</b></label>
+            <input type="password" name="password" placeholder="Enter your password"></p>
+            <p style=text-align:center;><label for="password" ><b>Confirm-Password</b></label>
+            <input type="password" name="password" placeholder="Enter your confirm-password">
+            
+           
+            <br>
+            <p style=text-align:center;><button type="submit" ><b>Submit</b></button></p>
+            <br>
+
+            </form>
+            {% for msg in messages %}
+            {{msg}}
+            {%endfor%}
+</body>
+</html>
